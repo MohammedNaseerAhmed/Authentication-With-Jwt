@@ -1,0 +1,55 @@
+### 
+POST  http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "abbas",
+  "email": "ask812826@gmail.com",
+  "password": "654321"
+}
+
+###
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "123456"
+}
+###
+POST  http://localhost:4000/api/auth/send-verify-otp
+Content-Type: application/json
+
+### 
+POST http://localhost:4000/api/auth/verify-account
+Content-Type: application/json
+
+{
+  "otp": "209335"
+}
+
+###
+POST http://localhost:4000/api/auth/is-auth 
+Content-Type: application/json
+
+###
+POST http://localhost:4000/api/auth/send-reset-otp
+Content-Type: application/json
+
+{
+  "email":"star.naso.user@gmail.com"
+}
+
+###
+POST http://localhost:4000/api/auth/reset-password
+Content-Type: application/json
+
+{
+  "email":"star.naso.user@gmail.com",
+  "otp":"803972",
+  "newPassword":"654321"
+}
+
+###
+GET http://localhost:4000/api/user/data
+Content-Type: application/json
