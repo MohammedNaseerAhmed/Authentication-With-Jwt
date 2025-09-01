@@ -30,7 +30,15 @@ export const AppContextProvider = (props) => {
         try
         {
             const {data} = await axios.get(backendUrl+'/api/user/data',{withCredentials: true})
-            data.success ? setUserData(data.userData) : toast.error(data.message)
+            if (data.success) {
+      setUserData(data.userData);
+    } else {
+      // Only show error if user is logged in
+      if (isLoggedIn) {
+        toast.error(data.message);
+      }
+      setUserData(null);
+    }
         }
         catch(error)
         {
