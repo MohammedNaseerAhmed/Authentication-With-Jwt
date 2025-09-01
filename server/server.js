@@ -18,7 +18,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://authentication-jwt-cokies.vercel.app",
-  "https://authentication-jwt-cookie-parser.vercel.app/"
+  "https://authentication-jwt-cookie-parser.vercel.app"
 ];
 
 app.use(cors({
