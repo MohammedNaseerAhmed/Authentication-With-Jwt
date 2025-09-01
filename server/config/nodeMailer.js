@@ -17,6 +17,13 @@ const transporter =nodemailer.createTransport({
     pass: process.env.SMTP_PASS,
     },
 })
+transporter.verify((err, success) => {
+  if (err) {
+    console.error("❌ SMTP connection failed:", err.message);
+  } else {
+    console.log("✅ SMTP server ready to send emails");
+  }
+});
 console.log("SMTP_USER:", process.env.SMTP_USER);
 console.log("SMTP_PASS:", process.env.SMTP_PASS ? "Loaded" : "Missing");
 
